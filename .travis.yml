@@ -31,13 +31,15 @@ addons:
   artifacts:
     paths:
       - $(git ls-files -o | grep build/outputs | tr "\n" ":")
+before_install:
+  - pip install --user codecov
 
 script:
   - ./gradlew check -PdisablePreDex --continue --stacktrace
-  - rm /home/travis/.gradle/caches/2.11/plugin-resolution/cache.properties.lock
 
 after_success:
   - ./gradlew jacocoFullReport
+  - codecov
 
 after_failure:
   - pandoc builder/build/reports/tests/index.html -t plain | sed -n '/^Failed tests/,/default-package/p'
