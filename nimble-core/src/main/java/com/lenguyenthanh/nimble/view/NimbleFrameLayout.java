@@ -7,12 +7,12 @@ import android.os.Bundle;
 import android.os.Parcelable;
 import android.util.AttributeSet;
 import android.widget.FrameLayout;
-import com.lenguyenthanh.nimble.NimbleView;
 import com.lenguyenthanh.nimble.NimblePresenter;
+import com.lenguyenthanh.nimble.NimbleView;
 
 public abstract class NimbleFrameLayout<V extends NimbleView> extends FrameLayout
     implements NimbleView {
-  private static final String PARENT_STATE_KEY = "parent_state";
+  protected static final String PARENT_STATE_KEY = "parent_state";
 
   abstract protected NimblePresenter<V> presenter();
 

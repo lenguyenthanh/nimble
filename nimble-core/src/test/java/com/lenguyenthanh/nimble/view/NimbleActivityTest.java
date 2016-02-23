@@ -1,71 +1,59 @@
-package com.lenguyenthanh.nimble;
+package com.lenguyenthanh.nimble.view;
 
 import android.os.Bundle;
-import com.lenguyenthanh.nimble.view.NimbleActivity;
+import com.lenguyenthanh.nimble.NimblePresenter;
+import com.lenguyenthanh.nimble.NimbleView;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
-import org.robolectric.Robolectric;
-import org.robolectric.RobolectricGradleTestRunner;
-import org.robolectric.annotation.Config;
-import org.robolectric.util.ActivityController;
 
-import static org.mockito.Matchers.any;
-import static org.mockito.Mockito.reset;
 import static org.mockito.Mockito.verify;
 
-@RunWith(RobolectricGradleTestRunner.class)
-@Config(constants = BuildConfig.class, sdk = 19)
-public class MvpActivityTest {
-
+public class NimbleActivityTest {
 
   @Mock
   NimblePresenter<NimbleView> presenter;
-  TestActivity activity;
-  ActivityController controller;
+  @Mock
+  Bundle bundle;
+  NimbleActivity<NimbleView> activity;
 
   @Before
   public void setUp() throws Exception {
     MockitoAnnotations.initMocks(this);
-    controller = Robolectric.buildActivity(TestActivity.class);
-    activity = (TestActivity) controller.get();
-    activity.setPresenter(presenter);
-    controller.create();
-    reset(presenter);
+    activity = Mockito.spy(TestActivity.class);
+    ((TestActivity) activity).setPresenter(presenter);
   }
 
   @Test
   public void testOnCreate() throws Exception {
-    controller.create();
+    activity.onCreate(bundle);
     verify(presenter).takeView(Mockito.any(NimbleView.class));
-    verify(presenter).onCreate(any(Bundle.class));
+    verify(presenter).onCreate(bundle);
   }
 
   @Test
   public void testOnResume() throws Exception {
-    controller.resume();
+    activity.onResume();
     verify(presenter).takeView(activity);
   }
 
   @Test
   public void testOnPause() throws Exception {
-    controller.pause();
+    activity.onPause();
     verify(presenter).dropView(activity);
   }
 
   @Test
   public void testOnSaveInstanceState() throws Exception {
-    Bundle bundle = Mockito.mock(Bundle.class);
-    controller.saveInstanceState(bundle);
+    activity.onSaveInstanceState(bundle);
     verify(presenter).onSave(bundle);
   }
 
   @Test
   public void testOnDestroy() throws Exception {
-    controller.destroy();
+    activity.onDestroy();
     verify(presenter).onDestroy();
   }
 
@@ -84,7 +72,7 @@ public class MvpActivityTest {
 
     @Override
     protected int layoutId() {
-      return 0;
+      return -1;
     }
   }
 }

@@ -12,7 +12,7 @@ import com.lenguyenthanh.nimble.NimblePresenter;
 
 public abstract class NimbleLinearLayout<V extends NimbleView> extends LinearLayout
     implements NimbleView {
-  private static final String PARENT_STATE_KEY = "parent_state";
+  protected static final String PARENT_STATE_KEY = "parent_state";
 
   abstract protected NimblePresenter<V> presenter();
 

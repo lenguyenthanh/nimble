@@ -15,8 +15,8 @@ android {
     targetSdkVersion 23
     versionCode versionMajor * 10000 + versionMinor * 1000 + versionPatch * 100 + versionBuild
     versionName "${versionMajor}.${versionMinor}.${versionPatch}"
-
   }
+
   buildTypes {
     release {
       minifyEnabled false
@@ -32,13 +32,16 @@ android {
     }
   }
 
+  testOptions {
+    unitTests.returnDefaultValues = true
+  }
+
 }
 
 dependencies {
   compile 'com.android.support:support-annotations:23.1.1'
 
   testCompile 'junit:junit:4.12'
-  testCompile 'org.robolectric:robolectric:3.0'
   testCompile 'com.google.truth:truth:0.28'
   testCompile 'org.mockito:mockito-all:1.10.19'
 }

@@ -27,13 +27,6 @@ public abstract class NimbleActivity<V extends NimbleView> extends Activity impl
   }
 
   @Override
-  public void setContentView(int layoutResID) {
-    if (layoutResID != 0) {
-      super.setContentView(layoutResID);
-    }
-  }
-
-  @Override
   @CallSuper
   protected void onResume() {
     super.onResume();
