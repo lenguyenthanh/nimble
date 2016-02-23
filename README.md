@@ -4,11 +4,11 @@ Nimble is a small, quick and flexible Model-View-Presenter library for Android
 
 ## Why Nimble
 
-## Inspiration
-
 ## Usage
 
 ## Components
+
+## Inspiration
 
 Nimble has alot of inspiration from other MVP library for Android:
 
@@ -21,8 +21,8 @@ Nimble has alot of inspiration from other MVP library for Android:
 
 ## Installation
 
-```sh
-    compile 'com.lenguyenthanh.nimble:1.0.0'
+```gradle
+compile 'com.lenguyenthanh.nimble:1.0.0'
 ```
 
 ## License
