@@ -1,31 +1,38 @@
-# # Nimble [![Build Status](https://travis-ci.org/lenguyenthanh/nimble.svg?branch=master)](https://travis-ci.org/lenguyenthanh/nimble) [![codecov.io](https://codecov.io/github/lenguyenthanh/nimble/coverage.svg?branch=master)](https://codecov.io/github/lenguyenthanh/nimble?branch=master)
+# Nimble [![Build Status](https://travis-ci.org/lenguyenthanh/nimble.svg?branch=master)](https://travis-ci.org/lenguyenthanh/nimble) [![codecov.io](https://codecov.io/github/lenguyenthanh/nimble/coverage.svg?branch=master)](https://codecov.io/github/lenguyenthanh/nimble?branch=master)
 
 Nimble is a small, quick and flexible Model-View-Presenter library for Android
 
-## Why Nimble
+### Why Nimble
+* Mvp is growing fast in Android community
+* There are some greate libraries out there but they all have some weeknesses
+* It has about 500 lines of code
+* Well tested code
+* It is designed to be used with Dagger but can use dependenly
+* It is designe to be flexible Mvp like: Activity, ViewGroup, Fragment
+* It can be use as multiple MVP in one screen as well as, one Mvp for multiple screens
+* It provide mechanism to save data when activity is recreated throws bundle
 
-## Usage
+### Usage
 
-## Components
 
-## Inspiration
+### Inspiration
 
-Nimble has alot of inspiration from other MVP libraries for Android such as:
+Nimble has alot of inspiration from other MVP library for Android:
 
 * [Mortar] - https://github.com/square/mortar
 * [Mosby] - https://github.com/sockeqwe/mosby
 * [Nucleus] - https://github.com/konmik/nucleus
 
-## Version
+### Version
 1.0.0
 
 ## Installation
 
-```gradle
-compile 'com.lenguyenthanh.nimble:0.5.0'
+``` gradle
+    compile 'com.lenguyenthanh.nimble:0.5.0'
 ```
 
-## License
+### License
 
     Copyright (C) 2016 Thanh Le
 
