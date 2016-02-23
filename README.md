@@ -22,7 +22,7 @@ Nimble has alot of inspiration from other MVP libraries for Android such as:
 ## Installation
 
 ```gradle
-compile 'com.lenguyenthanh.nimble:1.0.0'
+compile 'com.lenguyenthanh.nimble:0.5.0'
 ```
 
 ## License
