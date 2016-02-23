@@ -44,4 +44,12 @@ dependencies {
   testCompile 'junit:junit:4.12'
   testCompile 'com.google.truth:truth:0.28'
   testCompile 'org.mockito:mockito-all:1.10.19'
+  compile('org.powermock:powermock-api-mockito:1.6.2') {
+    exclude module: 'hamcrest-core'
+    exclude module: 'objenesis'
+  }
+  compile('org.powermock:powermock-module-junit4:1.6.2') {
+    exclude module: 'hamcrest-core'
+    exclude module: 'objenesis'
+  }
 }

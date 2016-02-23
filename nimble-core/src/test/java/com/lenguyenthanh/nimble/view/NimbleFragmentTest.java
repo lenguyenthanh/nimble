@@ -6,60 +6,62 @@ import com.lenguyenthanh.nimble.NimbleView;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 
+import static org.mockito.Mockito.spy;
 import static org.mockito.Mockito.verify;
 
-public class NimbleActivityTest {
-
+public class NimbleFragmentTest {
   @Mock
   NimblePresenter<NimbleView> presenter;
   @Mock
   Bundle bundle;
-  NimbleActivity<NimbleView> activity;
+  NimbleFragment<NimbleView> fragment;
 
   @Before
   public void setUp() throws Exception {
     MockitoAnnotations.initMocks(this);
-    activity = Mockito.spy(TestActivity.class);
-    ((TestActivity)activity).setPresenter(presenter);
+    fragment = spy(TestFragment.class);
+    ((TestFragment)fragment).setPresenter(presenter);
   }
 
-  @Test
-  public void testOnCreate() throws Exception {
-    activity.onCreate(bundle);
-    verify(presenter).takeView(Mockito.any(NimbleView.class));
-    verify(presenter).onCreate(bundle);
-  }
+  //@Test
+  //public void testOnCreateView() throws Exception {
+  //  LayoutInflater layoutInflater = spy(LayoutInflater.class);
+  //  ViewGroup viewGroup = spy(ViewGroup.class);
+  //  frameLayout.onCreateView(layoutInflater, viewGroup, bundle);
+  //  verify(layoutInflater).inflate(frameLayout.layoutId(), viewGroup, false);
+  //  verify(presenter).takeView(frameLayout);
+  //  verify(presenter).onCreate(bundle);
+  //}
 
   @Test
   public void testOnResume() throws Exception {
-    activity.onResume();
-    verify(presenter).takeView(activity);
+    fragment.onResume();
+    verify(presenter).takeView(fragment);
   }
 
   @Test
   public void testOnPause() throws Exception {
-    activity.onPause();
-    verify(presenter).dropView(activity);
+    fragment.onPause();
+    verify(presenter).dropView(fragment);
   }
 
   @Test
   public void testOnSaveInstanceState() throws Exception {
-    activity.onSaveInstanceState(bundle);
+    fragment.onSaveInstanceState(bundle);
     verify(presenter).onSave(bundle);
   }
 
   @Test
   public void testOnDestroy() throws Exception {
-    activity.onDestroy();
+    fragment.onDestroy();
     verify(presenter).onDestroy();
   }
 
-  public static class TestActivity extends NimbleActivity<NimbleView> {
+  public static class TestFragment extends NimbleFragment<NimbleView>{
 
-    private NimblePresenter<NimbleView> presenter;
+    NimblePresenter<NimbleView> presenter;
 
     public void setPresenter(NimblePresenter<NimbleView> presenter) {
       this.presenter = presenter;
@@ -72,7 +74,7 @@ public class NimbleActivityTest {
 
     @Override
     protected int layoutId() {
-      return -1;
+      return 0;
     }
   }
 }

@@ -16,14 +16,6 @@ public abstract class NimbleFragment<V extends NimbleView> extends Fragment impl
   abstract protected int layoutId();
 
   @Override
-  @CallSuper
-  public void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-    presenter().takeView(getMvpView());
-    presenter().onCreate(savedInstanceState);
-  }
-
-  @Override
   public View onCreateView(LayoutInflater inflater, ViewGroup container,
       Bundle savedInstanceState) {
     View view = inflater.inflate(layoutId(), container, false);
