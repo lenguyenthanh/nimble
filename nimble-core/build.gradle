@@ -24,6 +24,11 @@ android {
     }
   }
 
+  lintOptions {
+    warningsAsErrors true
+    abortOnError true // Fail early.
+  }
+  
   // This allows us see tests execution progress in the output on the CI.
   testOptions.unitTests.all {
     testLogging {
