@@ -23,7 +23,7 @@ public class NimbleActivityTest {
   public void setUp() throws Exception {
     MockitoAnnotations.initMocks(this);
     activity = Mockito.spy(TestActivity.class);
-    ((TestActivity)activity).setPresenter(presenter);
+    ((TestActivity) activity).setPresenter(presenter);
   }
 
   @Test

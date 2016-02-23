@@ -22,7 +22,7 @@ public class NimbleFragmentTest {
   public void setUp() throws Exception {
     MockitoAnnotations.initMocks(this);
     fragment = spy(TestFragment.class);
-    ((TestFragment)fragment).setPresenter(presenter);
+    ((TestFragment) fragment).setPresenter(presenter);
   }
 
   //@Test
@@ -59,7 +59,7 @@ public class NimbleFragmentTest {
     verify(presenter).onDestroy();
   }
 
-  public static class TestFragment extends NimbleFragment<NimbleView>{
+  public static class TestFragment extends NimbleFragment<NimbleView> {
 
     NimblePresenter<NimbleView> presenter;
 

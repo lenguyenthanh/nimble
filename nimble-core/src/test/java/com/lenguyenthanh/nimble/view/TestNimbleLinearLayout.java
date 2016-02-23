@@ -55,7 +55,7 @@ public class TestNimbleLinearLayout {
     verify(presenter).takeView(frameLayout);
   }
 
-  private void prepareForOnDetachedFromWindows(boolean isFinish){
+  private void prepareForOnDetachedFromWindows(boolean isFinish) {
     Activity activity = mock(Activity.class);
     when(activity.isFinishing()).thenReturn(isFinish);
     when(frameLayout.getActivity()).thenReturn(activity);
@@ -85,7 +85,7 @@ public class TestNimbleLinearLayout {
 
   @Test
   public void testOnSaveInstanceState() throws Exception {
-    Bundle bundle = (Bundle)frameLayout.onSaveInstanceState();
+    Bundle bundle = (Bundle) frameLayout.onSaveInstanceState();
     verify(presenter).onSave(bundle);
   }
 
@@ -97,7 +97,7 @@ public class TestNimbleLinearLayout {
     verify(presenter).onCreate(bundle);
   }
 
-  public static class TestLayout extends NimbleLinearLayout<NimbleView>{
+  public static class TestLayout extends NimbleLinearLayout<NimbleView> {
 
     NimblePresenter<NimbleView> presenter;
 
