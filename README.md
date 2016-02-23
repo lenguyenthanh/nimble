@@ -1,2 +1,2 @@
-# Nimble [![Build Status](https://travis-ci.org/lenguyenthanh/nimble.svg?branch=master)](https://travis-ci.org/lenguyenthanh/nimble)
+# Nimble [![Build Status](https://travis-ci.org/lenguyenthanh/nimble.svg?branch=master)](https://travis-ci.org/lenguyenthanh/nimble) [![codecov.io](https://codecov.io/github/lenguyenthanh/nimble/coverage.svg?branch=master)](https://codecov.io/github/lenguyenthanh/nimble?branch=master)
 Quick and flexible Mvp library for Android
