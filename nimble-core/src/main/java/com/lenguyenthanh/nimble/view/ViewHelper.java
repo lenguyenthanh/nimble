@@ -4,20 +4,24 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.ContextWrapper;
 
-public class ViewHelper {
-  private ViewHelper() {
-  }
+public final class ViewHelper {
 
   private static ViewHelper instance;
 
-  public synchronized static ViewHelper getInstance() {
-    if(instance == null){
-      instance = new ViewHelper();
+  private ViewHelper() {
+  }
+
+  public static ViewHelper getInstance() {
+    synchronized (ViewHelper.class) {
+      if (instance == null) {
+        instance = new ViewHelper();
+      }
     }
     return instance;
   }
 
-  public Activity getActivity(Context context) {
+  public Activity getActivity(final Context viewContext) {
+    Context context = viewContext;
     while (!(context instanceof Activity) && context instanceof ContextWrapper) {
       context = ((ContextWrapper) context).getBaseContext();
     }
