@@ -2,13 +2,12 @@ package com.lenguyenthanh.nimble.view;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.ContextWrapper;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.util.AttributeSet;
 import android.widget.LinearLayout;
-import com.lenguyenthanh.nimble.NimbleView;
 import com.lenguyenthanh.nimble.NimblePresenter;
+import com.lenguyenthanh.nimble.NimbleView;
 
 public abstract class NimbleLinearLayout<V extends NimbleView> extends LinearLayout
     implements NimbleView {
@@ -30,14 +29,7 @@ public abstract class NimbleLinearLayout<V extends NimbleView> extends LinearLay
 
   public Activity getActivity() {
     Context context = getContext();
-    while (!(context instanceof Activity) && context instanceof ContextWrapper) {
-      context = ((ContextWrapper) context).getBaseContext();
-    }
-    if (!(context instanceof Activity)) {
-      throw new IllegalStateException(
-          "Expected an activity context, got " + context.getClass().getSimpleName());
-    }
-    return (Activity) context;
+    return ViewHelper.getInstance().getActivity(context);
   }
 
   @Override
