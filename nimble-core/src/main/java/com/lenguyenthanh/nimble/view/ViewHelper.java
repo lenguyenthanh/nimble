@@ -11,6 +11,9 @@ public class ViewHelper {
   private static ViewHelper instance;
 
   public static ViewHelper getInstance() {
+    if(instance == null){
+      instance = new ViewHelper();
+    }
     return instance;
   }
 
