@@ -23,24 +23,12 @@ subprojects { project ->
 
     classDirectories = possibleClassDir(project)
 
-    def coverageSourceDirs = ["src/main/java",
-                              "src/mock/java",
-                              "src/debug/java"]
+    def coverageSourceDirs = ["src/main/java"]
 
     additionalSourceDirs = files(coverageSourceDirs)
     sourceDirectories = files(coverageSourceDirs)
     executionData = fileTree(dir: project.buildDir,
         includes: ['**/*.exec', '**/*.ec'])
-
-    //    doFirst {
-    //      files("${project.buildDir}/intermediates/classes/debug",
-    //          "${project.buildDir}/intermediates/classes/mock/debug",
-    //          "${project.buildDir}/classes/main").getFiles().each { file ->
-    //        if (file.name.contains('$')) {
-    //          file.renameTo(file.path.replace('$', '$$'))
-    //        }
-    //      }
-    //    }
   }
 }
 
@@ -76,8 +64,6 @@ FileCollection generateSourceFiles(Collection projects) {
 
   projects.each { project ->
     dirs.add("${project.name}/src/main/java")
-    dirs.add("${project.name}/src/mock/java")
-    dirs.add("${project.name}/src/debug/java")
   }
 
   return files(dirs)
