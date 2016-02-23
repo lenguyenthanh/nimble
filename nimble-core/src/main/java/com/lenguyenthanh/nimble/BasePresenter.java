@@ -13,7 +13,7 @@ public abstract class BasePresenter<View extends NimbleView> implements NimblePr
   protected final View getView() {
     return view;
   }
-  
+
   @Override
   public void takeView(View view) {
     if (this.view != view) {

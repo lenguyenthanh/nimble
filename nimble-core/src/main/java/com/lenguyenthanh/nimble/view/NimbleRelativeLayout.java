@@ -10,8 +10,8 @@ import android.widget.LinearLayout;
 import com.lenguyenthanh.nimble.NimbleView;
 import com.lenguyenthanh.nimble.NimblePresenter;
 
-public abstract class NimbleRelativeLayout<V extends NimbleView> extends LinearLayout implements
-    NimbleView {
+public abstract class NimbleRelativeLayout<V extends NimbleView> extends LinearLayout
+    implements NimbleView {
   private static final String PARENT_STATE_KEY = "parent_state";
 
   abstract protected NimblePresenter<V> presenter();
@@ -52,7 +52,7 @@ public abstract class NimbleRelativeLayout<V extends NimbleView> extends LinearL
   protected void onDetachedFromWindow() {
     super.onDetachedFromWindow();
     presenter().dropView(getMvpView());
-    if(getActivity().isFinishing()){
+    if (getActivity().isFinishing()) {
       presenter().onDestroy();
     }
   }
@@ -67,7 +67,7 @@ public abstract class NimbleRelativeLayout<V extends NimbleView> extends LinearL
 
   @Override
   protected void onRestoreInstanceState(Parcelable state) {
-    Bundle bundle = (Bundle)state;
+    Bundle bundle = (Bundle) state;
     super.onRestoreInstanceState(bundle.getParcelable(PARENT_STATE_KEY));
     presenter().onCreate(bundle);
   }
