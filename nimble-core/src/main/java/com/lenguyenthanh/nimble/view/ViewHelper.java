@@ -10,7 +10,7 @@ public class ViewHelper {
 
   private static ViewHelper instance;
 
-  public static ViewHelper getInstance() {
+  public synchronized static ViewHelper getInstance() {
     if(instance == null){
       instance = new ViewHelper();
     }
