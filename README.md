@@ -3,11 +3,10 @@
 Nimble is a small, quick and flexible Model-View-Presenter library for Android
 
 ### Why Nimble
-* Mvp is growing fast in Android community
 * There are some greate libraries out there but they all have some weeknesses
-* It has about 500 lines of code
-* Well tested code
-* It is designed to be used with Dagger but can use dependenly
+* It has yet 500 lines of code. So it is easy to understant, and make it your own.
+* Well tested code.
+* It is designed to be used with Dagger but can use dependenly.
 * It is designe to be flexible Mvp like: Activity, ViewGroup, Fragment
 * It can be use as multiple MVP in one screen as well as, one Mvp for multiple screens
 * It provide mechanism to save data when activity is recreated throws bundle
@@ -19,12 +18,12 @@ Nimble is a small, quick and flexible Model-View-Presenter library for Android
 
 Nimble has alot of inspiration from other MVP library for Android:
 
-* [Mortar] - https://github.com/square/mortar
-* [Mosby] - https://github.com/sockeqwe/mosby
-* [Nucleus] - https://github.com/konmik/nucleus
+* Mortar - https://github.com/square/mortar
+* Mosby - https://github.com/sockeqwe/mosby
+* Nucleus - https://github.com/konmik/nucleus
 
 ### Version
-1.0.0
+0.5.0
 
 ## Installation
 
