@@ -1,7 +1,9 @@
-package com.lenguyenthanh.nimble;
+package com.lenguyenthanh.nimble.view;
 
 import android.os.Bundle;
-import com.lenguyenthanh.nimble.view.NimbleActivity;
+import com.lenguyenthanh.nimble.BuildConfig;
+import com.lenguyenthanh.nimble.NimblePresenter;
+import com.lenguyenthanh.nimble.NimbleView;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -19,7 +21,7 @@ import static org.mockito.Mockito.verify;
 
 @RunWith(RobolectricGradleTestRunner.class)
 @Config(constants = BuildConfig.class, sdk = 19)
-public class MvpActivityTest {
+public class NimbleActivityTest {
 
 
   @Mock
