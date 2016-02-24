@@ -25,6 +25,7 @@ repositories {
 }
 
 dependencies {
+  compile project(':nimble-core')
 
   compile 'com.android.support:appcompat-v7:23.1.1'
   compile 'com.android.support:design:23.1.1'
@@ -32,11 +33,14 @@ dependencies {
   //Dagger 2
   compile 'com.google.dagger:dagger:2.0.2'
   apt 'com.google.dagger:dagger-compiler:2.0.2'
-  provided 'javax.inject:javax.inject-tck:1'
+  provided 'org.glassfish:javax.annotation:10.0-b28'
 
   // saving view state
   compile 'frankiesardo:icepick:3.1.0'
   apt 'frankiesardo:icepick-processor:3.1.0'
+
+  // View Injection
+  compile 'com.jakewharton:butterknife:7.0.1'
 
   testCompile 'junit:junit:4.12'
 }
