@@ -6,6 +6,30 @@ def versionMinor = 5
 def versionPatch = 0
 def versionBuild = 0 // bump for dogfood builds, public betas, etc.
 
+ext {
+  bintrayRepo = 'maven'
+  bintrayName = 'android-nimble'
+
+  publishedGroupId = 'com.lenguyenthanh.nimble'
+  libraryName = 'nimble'
+  artifact = 'nimble'
+
+  libraryDescription = 'A small, quick and flexible Model-View-Presenter library for Android.'
+
+  siteUrl = 'https://github.com/lenguyenthanh/nimble'
+  gitUrl = 'https://github.com/lenguyenthanh/nimble.git'
+
+  libraryVersion = "${versionMajor}.${versionMinor}.${versionPatch}"
+
+  developerId = 'lenguyenthanh'
+  developerName = 'Thanh Le'
+  developerEmail = 'lenguyenthanh@hotmail.com'
+
+  licenseName = 'The Apache Software License, Version 2.0'
+  licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+  allLicenses = ["Apache-2.0"]
+}
+
 android {
   compileSdkVersion 23
   buildToolsVersion "23.0.2"
@@ -50,3 +74,6 @@ dependencies {
   testCompile 'com.google.truth:truth:0.28'
   testCompile 'org.mockito:mockito-all:1.10.19'
 }
+
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'
