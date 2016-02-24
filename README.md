@@ -43,22 +43,23 @@ You should follow these steps to create a Mvp component in your application:
             User user = ...
             getView().showUser(user);
         }
+    }
 ```
 4. Implement your View which should extents base Views like NimbleActivity:
 ```java
     public class MainActivity extends NimbleActivity<MainView> {
 
-    @Override
-    protected MainPresenter presenter() {
-        return presenter;
-    }
+        @Override
+        protected MainPresenter presenter() {
+            return presenter;
+        }
     
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        presenter().getUser();
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            presenter().getUser();
+        }
     }
-}
 ```
 
 Done you have an Mvp component now.
