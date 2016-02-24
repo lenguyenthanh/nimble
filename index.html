@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Nimble by lenguyenthanh</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Nimble</h1>
+        <h2>Nimble is a small, quick and flexible Model-View-Presenter library for Android</h2>
+        <a href="https://github.com/lenguyenthanh/nimble" class="button"><small>View project on</small> GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>
+<a id="nimble--" class="anchor" href="#nimble--" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Nimble <a href="https://travis-ci.org/lenguyenthanh/nimble"><img src="https://travis-ci.org/lenguyenthanh/nimble.svg?branch=master" alt="Build Status"></a> <a href="https://codecov.io/github/lenguyenthanh/nimble?branch=master"><img src="https://codecov.io/github/lenguyenthanh/nimble/coverage.svg?branch=master" alt="codecov.io"></a>
+</h1>
+
+<p>Nimble is a small, quick and flexible Model-View-Presenter library for Android</p>
+
+<h3>
+<a id="android-model-view-presentermvp" class="anchor" href="#android-model-view-presentermvp" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Android Model-View-Presenter(Mvp)</h3>
+
+<p>Mvp is a architectural pattern, and is to used mostly for front end. It has three main parts:</p>
+
+<ul>
+<li>The <strong>model</strong> should be a simple Java object, is used to store data to present to user.</li>
+<li>The <strong>View</strong> is used to display data to user. It should be a <a href="http://martinfowler.com/eaaDev/PassiveScreen.html">passive view</a>.</li>
+<li>The <strong>presenter</strong> acts upon the model and the view. It retrieves data from repositories (the model), and formats it for display in the view.</li>
+</ul>
+
+<p>There are some other definitions which specifics for Android (Thanks <a href="https://twitter.com/panavtec">Christian</a> for his great <a href="http://panavtec.me/modeling-presentation-layer/">article</a>):</p>
+
+<ul>
+<li>
+<strong>Android view</strong>: Just an Android component, something that extends from android.view.View</li>
+<li>
+<strong>View</strong>: The view interface to communicate from your presenter to your view implementation, it can be implemented in your preferred Android component, sometimes is better to use an Activity others a Fragment or maybe a Custom View.</li>
+<li>
+<strong>Screen</strong>: A screen is more a user concept, the user gets the feeling that the phone is navigating between windows, but we can represent this in Android with Activities or replacing fragments/views in the same Activity. So it depends on the perception that the user gets and usually represents all the content that you can see in the view.</li>
+</ul>
+
+<h3>
+<a id="why-nimble" class="anchor" href="#why-nimble" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Why Nimble</h3>
+
+<ul>
+<li>It has totally 500 lines of code. So it is simple and easy to work with. You don't really need to take alot of time to understand it.</li>
+<li>It has well tested code so you can confident when using it.</li>
+<li>It is designed to be used with Dagger but you can use it any way you like. It is so flexible.</li>
+<li>It can be used as multiple Mvp components in one screen as well as, one Mvp for multiple screens.</li>
+<li>It provides mechanism to save data when activity/fragment/view is recreated throws Bundle class.</li>
+</ul>
+
+<h3>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h3>
+
+<p>Nimble has two basic interface <a href="https://github.com/lenguyenthanh/nimble/blob/master/nimble-core/src/main/java/com/lenguyenthanh/nimble/NimbleView.java">NimbleView</a> and <a href="https://github.com/lenguyenthanh/nimble/blob/master/nimble-core/src/main/java/com/lenguyenthanh/nimble/NimblePresenter.java">NimblePresenter</a>. They are base interfaces for ant views and presenters.</p>
+
+<p>You should follow these steps to create a Mvp component in your application:</p>
+
+<ol>
+<li>
+<p>Create a View interface which must extents NimbleView:</p>
+
+<div class="highlight highlight-source-java"><pre><span class="pl-k">public</span> <span class="pl-k">interface</span> <span class="pl-en">MainView</span> <span class="pl-k">extends</span> <span class="pl-e">NimbleView</span> {
+    <span class="pl-k">void</span> <span class="pl-en">showUser</span>(<span class="pl-smi">User</span> <span class="pl-v">user</span>);
+}</pre></div>
+</li>
+<li>
+<p>Create a Presenter interface which must extent NimblePresenter with View generic like:</p>
+
+<div class="highlight highlight-source-java"><pre><span class="pl-k">public</span> <span class="pl-k">interface</span> <span class="pl-en">MainPresenter</span> <span class="pl-k">extends</span> <span class="pl-e">NimblePresenter&lt;<span class="pl-smi">MainView</span>&gt;</span> {
+    <span class="pl-k">void</span> <span class="pl-en">getUser</span>();
+}</pre></div>
+</li>
+<li>
+<p>Implement your Presenter which should extent <a href="https://github.com/lenguyenthanh/nimble/blob/master/nimble-core/src/main/java/com/lenguyenthanh/nimble/BasePresenter.java">BasePresenter</a>:</p>
+
+<div class="highlight highlight-source-java"><pre><span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">MainPresenterImpl</span> <span class="pl-k">extends</span> <span class="pl-e">BasePresenter&lt;<span class="pl-smi">MainView</span>&gt;</span> <span class="pl-k">implements</span> <span class="pl-e">MainPresenter</span> {
+    <span class="pl-k">public</span> <span class="pl-k">void</span> <span class="pl-en">getUser</span>(){
+        <span class="pl-smi">User</span> user <span class="pl-k">=</span> <span class="pl-c1">...</span>
+        getView()<span class="pl-k">.</span>showUser(user);
+    }
+}</pre></div>
+</li>
+<li>
+<p>Implement your View which should extent base Nimble Views such as <a href="https://github.com/lenguyenthanh/nimble/blob/master/nimble-core/src/main/java/com/lenguyenthanh/nimble/view/NimbleActivity.java">NimbleActivity</a>:</p>
+
+<div class="highlight highlight-source-java"><pre><span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">MainActivity</span> <span class="pl-k">extends</span> <span class="pl-e">NimbleActivity&lt;<span class="pl-smi">MainView</span>&gt;</span> {
+
+    <span class="pl-k">@Override</span>
+    <span class="pl-k">protected</span> <span class="pl-smi">MainPresenter</span> <span class="pl-en">presenter</span>() {
+        <span class="pl-k">return</span> presenter;
+    }
+
+    <span class="pl-k">@Override</span>
+    <span class="pl-k">protected</span> <span class="pl-k">void</span> <span class="pl-en">onCreate</span>(<span class="pl-smi">Bundle</span> <span class="pl-v">savedInstanceState</span>) {
+        <span class="pl-v">super</span><span class="pl-k">.</span>onCreate(savedInstanceState);
+        presenter()<span class="pl-k">.</span>getUser();
+    }
+}</pre></div>
+</li>
+</ol>
+
+<p>Congratulation!!! You have a Mvp component now.</p>
+
+<h3>
+<a id="inspiration" class="anchor" href="#inspiration" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Inspiration</h3>
+
+<p>Nimble has a lot of inspiration from other great MVP libraries for Android:</p>
+
+<ul>
+<li>Mortar - <a href="https://github.com/square/mortar">https://github.com/square/mortar</a>
+</li>
+<li>Nucleus - <a href="https://github.com/konmik/nucleus">https://github.com/konmik/nucleus</a>
+</li>
+<li>Mosby - <a href="https://github.com/sockeqwe/mosby">https://github.com/sockeqwe/mosby</a>
+</li>
+</ul>
+
+<h3>
+<a id="version" class="anchor" href="#version" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Version</h3>
+
+<p>0.5.0</p>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
+
+<p>Just clone and copy/paste. I am trying to publish it to Jcenter() and maven() center. So sorry for any inconvenient. Will be updated soon.</p>
+
+<h3>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h3>
+
+<pre><code>Copyright (C) 2016 Thanh Le
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+</code></pre>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/lenguyenthanh/nimble/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/lenguyenthanh/nimble/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/lenguyenthanh/nimble"></a> is maintained by <a href="https://github.com/lenguyenthanh">lenguyenthanh</a>.</p>
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+            <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-33060032-6");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
