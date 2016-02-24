@@ -8,4 +8,9 @@ public class MainPresenterImpl extends SaveStatePresenter<MainView> implements M
   public MainPresenterImpl() {
     // This constructor is to help Dagger.
   }
+
+  @Override
+  public void onDestroy() {
+    // This method is intentionally empty.
+  }
 }

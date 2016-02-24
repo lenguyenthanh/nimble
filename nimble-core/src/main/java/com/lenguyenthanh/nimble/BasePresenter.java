@@ -31,9 +31,4 @@ public abstract class BasePresenter<View extends NimbleView> implements NimblePr
       this.view = null;
     }
   }
-
-  @Override
-  public void onDestroy(){
-
-  }
 }
