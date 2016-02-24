@@ -20,6 +20,10 @@ android {
   }
 }
 
+repositories {
+  maven {url "https://clojars.org/repo/"}
+}
+
 dependencies {
 
   compile 'com.android.support:appcompat-v7:23.1.1'
