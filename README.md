@@ -17,7 +17,7 @@ There are some other definitions which specifics for Android (Thanks [Christian]
 * It has totally 500 lines of code. So it is simple and easy to work with. You don't really need to take alot of time to understand it.
 * It has well tested code so you can confident when using it.
 * It is designed to be used with Dagger but you can use it any way you like. It is so flexible.
-* It can be used as multiple Mvps in one screen as well as, one Mvp for multiple screens.
+* It can be used as multiple Mvp components in one screen as well as, one Mvp for multiple screens.
 * It provides mechanism to save data when activity/fragment/view is recreated throws Bundle class.
 
 ### Usage
