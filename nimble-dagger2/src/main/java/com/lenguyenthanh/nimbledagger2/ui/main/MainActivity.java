@@ -1,6 +1,5 @@
 package com.lenguyenthanh.nimbledagger2.ui.main;
 
-import android.os.Bundle;
 import android.widget.TextView;
 import butterknife.Bind;
 import butterknife.OnClick;
@@ -35,11 +34,6 @@ public class MainActivity extends BaseActivity<MainView> implements MainView {
         .appComponent(appComponent)
         .build();
     component.inject(this);
-  }
-
-  @Override
-  protected void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
   }
 
   @OnClick(R.id.fab)
