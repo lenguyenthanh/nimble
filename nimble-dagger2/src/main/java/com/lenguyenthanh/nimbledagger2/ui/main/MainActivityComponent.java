@@ -1,7 +1,7 @@
 package com.lenguyenthanh.nimbledagger2.ui.main;
 
 import com.lenguyenthanh.nimbledagger2.DaggerApplication;
-import com.lenguyenthanh.nimbledagger2.dagger.ActivityScope;
+import com.lenguyenthanh.nimbledagger2.scope.ActivityScope;
 
 @dagger.Component(dependencies = DaggerApplication.AppComponent.class,
     modules = MainActivityModule.class)

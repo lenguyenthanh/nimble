@@ -1,7 +1,7 @@
 package com.lenguyenthanh.nimbledagger2.ui.main;
 
 import android.app.Activity;
-import com.lenguyenthanh.nimbledagger2.dagger.ActivityScope;
+import com.lenguyenthanh.nimbledagger2.scope.ActivityScope;
 import dagger.Module;
 import dagger.Provides;
 

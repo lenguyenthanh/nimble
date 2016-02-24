@@ -1,4 +1,4 @@
-package com.lenguyenthanh.nimbledagger2.dagger;
+package com.lenguyenthanh.nimbledagger2.scope;
 
 import javax.inject.Scope;
 
