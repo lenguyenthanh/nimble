@@ -21,10 +21,10 @@
         <Bug pattern="UWF_FIELD_NOT_INITIALIZED_IN_CONSTRUCTOR" type="UWF_FIELD_NOT_INITIALIZED_IN_CONSTRUCTOR"/>
     </Match>
 
-    <!-- Ignore UPM in lambdas from Retrolambda, FindBugs does not correctly understand them -->
+    <!-- Do not check for non-initialized fields in activities because usually we initialize View Widgets by ButterKnife -->
     <Match>
-        <Bug code="UPM" />
-        <Class name="~.*\$\$Lambda\$.*"/>
+        <Bug pattern="UWF_FIELD_NOT_INITIALIZED_IN_CONSTRUCTOR" type="UWF_FIELD_NOT_INITIALIZED_IN_CONSTRUCTOR"/>
+        <Class name="~.*Activity"/>
     </Match>
 
 </FindBugsFilter>
