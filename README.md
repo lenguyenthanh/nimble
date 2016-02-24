@@ -19,11 +19,11 @@ Nimble is a small, quick and flexible Model-View-Presenter library for Android
 
 ### Inspiration
 
-Nimble has alot of inspiration from other MVP library for Android:
+Nimble has alot of inspiration from other great MVP libraries for Android:
 
 * Mortar - https://github.com/square/mortar
-* Mosby - https://github.com/sockeqwe/mosby
 * Nucleus - https://github.com/konmik/nucleus
+* Mosby - https://github.com/sockeqwe/mosby
 
 ### Version
 0.5.0
