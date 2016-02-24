@@ -76,7 +76,7 @@ Nimble has a lot of inspiration from other great MVP libraries for Android:
 0.5.0
 
 ## Installation
-Just clone and copy/paste. I am trying to publish it to Jcenter() and maven() center. So sorry for any inconvenient. Will be update is soon.
+Just clone and copy/paste. I am trying to publish it to Jcenter() and maven() center. So sorry for any inconvenient. Will be updated is soon.
 
 ### License
 
