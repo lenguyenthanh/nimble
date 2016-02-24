@@ -25,21 +25,21 @@ Nimble has two basic interface [NimbleView](https://github.com/lenguyenthanh/nim
 
 You should follow these steps to create a Mvp component in your application:
 
-1. Create a View interface which extents NimbleView:
+1. Create a View interface which must extents NimbleView:
 
   ```java
   public interface MainView extends NimbleView {
       void showUser(User user);
   }
   ```
-2. Create a Presenter interface which extents NimblePresenter with View generic like:
+2. Create a Presenter interface which must extent NimblePresenter with View generic like:
 
   ```java
   public interface MainPresenter extends NimblePresenter<MainView> {
       void getUser();
   }
   ```
-3. Implement your Presenter which should extents [BasePresenter](https://github.com/lenguyenthanh/nimble/blob/master/nimble-core/src/main/java/com/lenguyenthanh/nimble/BasePresenter.java):
+3. Implement your Presenter which should extent [BasePresenter](https://github.com/lenguyenthanh/nimble/blob/master/nimble-core/src/main/java/com/lenguyenthanh/nimble/BasePresenter.java):
 
   ```java
   public class MainPresenterImpl extends BasePresenter<MainView> implements MainPresenter {
@@ -49,7 +49,7 @@ You should follow these steps to create a Mvp component in your application:
       }
   }
   ```
-4. Implement your View which should extents base Views like NimbleActivity:
+4. Implement your View which should extent base Nimble Views such as [NimbleActivity](https://github.com/lenguyenthanh/nimble/blob/master/nimble-core/src/main/java/com/lenguyenthanh/nimble/view/NimbleActivity.java):
 
   ```java
   public class MainActivity extends NimbleActivity<MainView> {
