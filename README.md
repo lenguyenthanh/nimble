@@ -67,7 +67,7 @@ You should follow these steps to create a Mvp component in your application:
   }
   ```
 
-Congratulation!!! You have an Mvp component now.
+Congratulation!!! You have a Mvp component now.
 
 ### Inspiration
 
