@@ -24,45 +24,50 @@ There are some other definitions which specifics for Android (Thanks [Christian]
 Nimble has two basic interface [NimbleView](https://github.com/lenguyenthanh/nimble/blob/master/nimble-core/src/main/java/com/lenguyenthanh/nimble/NimbleView.java) and [NimblePresenter](https://github.com/lenguyenthanh/nimble/blob/master/nimble-core/src/main/java/com/lenguyenthanh/nimble/NimblePresenter.java). They are base interfaces for ant views and presenters.
 
 You should follow these steps to create a Mvp component in your application:
-1.  Create a View interface which extents NimbleView:
-```java
-public interface MainView extends NimbleView {
-    void showUser(User user);
-}
-```
-2.  Create a Presenter interface which extents NimblePresenter with View generic like:
-```java
-public interface MainPresenter extends NimblePresenter<MainView> {
-    void getUser();
-}
-```
-3.  Implement your Presenter which should extents [BasePresenter](https://github.com/lenguyenthanh/nimble/blob/master/nimble-core/src/main/java/com/lenguyenthanh/nimble/BasePresenter.java):
-```java
-public class MainPresenterImpl extends BasePresenter<MainView> implements MainPresenter {
-    public void getUser(){
-        User user = ...
-        getView().showUser(user);
-    }
-}
-```
+
+1. Create a View interface which extents NimbleView:
+
+  ```java
+  public interface MainView extends NimbleView {
+      void showUser(User user);
+  }
+  ```
+2. Create a Presenter interface which extents NimblePresenter with View generic like:
+
+  ```java
+  public interface MainPresenter extends NimblePresenter<MainView> {
+      void getUser();
+  }
+  ```
+3. Implement your Presenter which should extents [BasePresenter](https://github.com/lenguyenthanh/nimble/blob/master/nimble-core/src/main/java/com/lenguyenthanh/nimble/BasePresenter.java):
+
+  ```java
+  public class MainPresenterImpl extends BasePresenter<MainView> implements MainPresenter {
+      public void getUser(){
+          User user = ...
+          getView().showUser(user);
+      }
+  }
+  ```
 4. Implement your View which should extents base Views like NimbleActivity:
-```java
-public class MainActivity extends NimbleActivity<MainView> {
 
-    @Override
-    protected MainPresenter presenter() {
-        return presenter;
-    }
+  ```java
+  public class MainActivity extends NimbleActivity<MainView> {
+
+      @Override
+      protected MainPresenter presenter() {
+          return presenter;
+      }
     
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        presenter().getUser();
-    }
-}
-```
+      @Override
+      protected void onCreate(Bundle savedInstanceState) {
+          super.onCreate(savedInstanceState);
+          presenter().getUser();
+      }
+  }
+  ```
 
-Done you have an Mvp component now.
+Congratulation!!! You have a Mvp component now.
 
 ### Inspiration
 
