@@ -2,8 +2,8 @@
 
 Nimble is a small, quick and flexible Model-View-Presenter library for Android
 
-### Android Model-View-Presenter(Mvp)
-Mvp is a architectural pattern, and is to used mostly for front end. It has three main parts:
+### Android Model-View-Presenter(MVP)
+MVP is a architectural pattern, and is to used mostly for front end. It has three main parts:
 * The **model** should be a simple Java object, is used to store data to present to user.
 * The **View** is used to display data to user. It should be a [passive view](http://martinfowler.com/eaaDev/PassiveScreen.html).
 * The **presenter** acts upon the model and the view. It retrieves data from repositories (the model), and formats it for display in the view.
@@ -17,13 +17,13 @@ There are some other definitions which specifics for Android (Thanks [Christian]
 * It has totally 500 lines of code. So it is simple and easy to work with. You don't really need to take alot of time to understand it.
 * It has well tested code so you can confident when using it.
 * It is designed to be used with Dagger but you can use it any way you like. It is so flexible.
-* It can be used as multiple Mvp components in one screen as well as, one Mvp for multiple screens.
+* It can be used as multiple MVP components in one screen as well as, one MVP for multiple screens.
 * It provides mechanism to save data when activity/fragment/view is recreated throws Bundle class.
 
 ### Usage
 Nimble has two basic interface [NimbleView](https://github.com/lenguyenthanh/nimble/blob/master/nimble-core/src/main/java/com/lenguyenthanh/nimble/NimbleView.java) and [NimblePresenter](https://github.com/lenguyenthanh/nimble/blob/master/nimble-core/src/main/java/com/lenguyenthanh/nimble/NimblePresenter.java). They are base interfaces for ant views and presenters.
 
-You should follow these steps to create a Mvp component in your application:
+You should follow these steps to create a MVP component in your application:
 
 1. Create a View interface which must extents NimbleView:
 
@@ -67,7 +67,7 @@ You should follow these steps to create a Mvp component in your application:
   }
   ```
 
-Congratulation!!! You have a Mvp component now.
+Congratulation!!! You have a MVP component now.
 
 ### Inspiration
 
