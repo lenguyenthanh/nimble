@@ -1,12 +1,18 @@
 package com.lenguyenthanh.nimbledagger2.ui.main;
 
+import android.os.Bundle;
+import android.support.annotation.NonNull;
 import com.lenguyenthanh.nimbledagger2.data.UserRepository;
 import com.lenguyenthanh.nimbledagger2.data.model.User;
 import com.lenguyenthanh.nimbledagger2.ui.base.SaveStatePresenter;
+import icepick.State;
 import javax.inject.Inject;
 
 public class MainPresenterImpl extends SaveStatePresenter<MainView> implements MainPresenter {
+  @NonNull
   private final UserRepository userRepository;
+  @State
+  String fullName;
 
   @Inject
   public MainPresenterImpl(UserRepository userRepository) {
@@ -14,9 +20,22 @@ public class MainPresenterImpl extends SaveStatePresenter<MainView> implements M
   }
 
   @Override
-  public void getUser(){
+  public void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    restoreData();
+  }
+
+  private void restoreData() {
+    if (fullName != null && fullName.length() != 0) {
+      getView().sayHello(fullName);
+    }
+  }
+
+  @Override
+  public void getUser() {
     User user = userRepository.getUser();
-    getView().showUser(user);
+    fullName = user.toString();
+    getView().sayHello(fullName);
   }
 
   @Override

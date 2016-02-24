@@ -5,7 +5,6 @@ import butterknife.Bind;
 import butterknife.OnClick;
 import com.lenguyenthanh.nimbledagger2.DaggerApplication;
 import com.lenguyenthanh.nimbledagger2.R;
-import com.lenguyenthanh.nimbledagger2.data.model.User;
 import com.lenguyenthanh.nimbledagger2.ui.base.BaseActivity;
 import javax.inject.Inject;
 
@@ -37,12 +36,12 @@ public class MainActivity extends BaseActivity<MainView> implements MainView {
   }
 
   @OnClick(R.id.fab)
-  void fabClicked(){
+  void fabClicked() {
     presenter().getUser();
   }
 
   @Override
-  public void showUser(User user) {
-    tvContent.setText(String.format("Hello %s %s", user.firstName, user.lastName));
+  public void sayHello(String name) {
+    tvContent.setText(String.format("Hello %s", name));
   }
 }
