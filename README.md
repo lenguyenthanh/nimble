@@ -2,20 +2,26 @@
 
 Nimble is a small, quick and flexible Model-View-Presenter library for Android
 
+### Android Model-View-Presenter(Mvp)
+Mvp is a architectural pattern, and is to used mostly for front end. It has three main parts:
+* The **model** should be a simple Java object, is used to store data to present to user.
+* The **View** is used to display data to user. It should be a [passive view](http://martinfowler.com/eaaDev/PassiveScreen.html).
+* The **presenter** acts upon the model and the view. It retrieves data from repositories (the model), and formats it for display in the view.
+
+There are some other definitions which specifics for Android (Thanks [Christian](https://twitter.com/panavtec) for his great [article](http://panavtec.me/modeling-presentation-layer/)):
+* **Android view**: Just an Android component, something that extends from android.view.View
+* **View**: The view interface to communicate from your presenter to your view implementation, it can be implemented in your preferred Android component, sometimes is better to use an Activity others a Fragment or maybe a Custom View.
+* **Screen**: A screen is more a user concept, the user gets the feeling that the phone is navigating between windows, but we can represent this in Android with Activities or replacing fragments/views in the same Activity. So it depends on the perception that the user gets and usually represents all the content that you can see in the view.
+
 ### Why Nimble
-* It has yet 500 lines of code. So it is easy to understand, and make it your own.
-* Well tested code.
-* It is designed to be used with Dagger but can use dependently.
-* It is designed to be flexible Mvp like: Activity, ViewGroup, Fragment
-* It can be use as multiple MVP in one screen as well as, one Mvp for multiple screens
-* It provide mechanism to save data when activity is recreated throws bundle
+* It has totally 500 lines of code. So it is simple and easy to work with. You don't really need to take alot of time to understand it.
+* It has well tested code so you can confident when using it.
+* It is designed to be used with Dagger but you can use it any way you like. It is so flexible.
+* It can be used as multiple Mvps in one screen as well as, one Mvp for multiple screens.
+* It provides mechanism to save data when activity/fragment/view is recreated throws Bundle class.
 
 ### Usage
-
-``` java
-    View
-    Presenter
-```
+Nimble has two basic interface [NimbleView](https://github.com/lenguyenthanh/nimble/blob/master/nimble-core/src/main/java/com/lenguyenthanh/nimble/NimbleView.java) and [NimblePresenter](https://github.com/lenguyenthanh/nimble/blob/master/nimble-core/src/main/java/com/lenguyenthanh/nimble/NimblePresenter.java). 
 
 ### Inspiration
 
@@ -29,10 +35,7 @@ Nimble has alot of inspiration from other great MVP libraries for Android:
 0.5.0
 
 ## Installation
-
-``` gradle
-    compile 'com.lenguyenthanh.nimble:0.5.0'
-```
+Just clone and copy/pase. I am trying to publish it to Jcenter() and maven() center. So sorry for any inconvenient. Will be update is soon.
 
 ### License
 
