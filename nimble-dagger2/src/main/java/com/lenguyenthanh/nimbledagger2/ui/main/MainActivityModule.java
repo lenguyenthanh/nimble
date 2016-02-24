@@ -1,6 +1,8 @@
 package com.lenguyenthanh.nimbledagger2.ui.main;
 
 import android.app.Activity;
+import com.lenguyenthanh.nimbledagger2.data.UserRepository;
+import com.lenguyenthanh.nimbledagger2.data.UserRepositoryImpl;
 import com.lenguyenthanh.nimbledagger2.scope.ActivityScope;
 import dagger.Module;
 import dagger.Provides;
@@ -23,5 +25,11 @@ public class MainActivityModule {
   @ActivityScope
   MainPresenter providePresenter(MainPresenterImpl presenter) {
     return presenter;
+  }
+
+  @Provides
+  @ActivityScope
+  UserRepository provideUserRepository(){
+    return new UserRepositoryImpl();
   }
 }

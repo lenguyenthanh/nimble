@@ -15,7 +15,8 @@
   >
 
   <TextView
-    android:text="Hello World!"
+    android:id="@+id/tvContent"
+    android:text="Press fab!!!"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     />
