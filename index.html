@@ -106,9 +106,13 @@
 <p>Implement your View which should extent base a Nimble Views such as <a href="https://github.com/lenguyenthanh/nimble/blob/master/nimble-core/src/main/java/com/lenguyenthanh/nimble/view/NimbleActivity.java">NimbleActivity</a> and implments your View interface:</p>
 
 <div class="highlight highlight-source-java"><pre><span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">MainActivity</span> <span class="pl-k">extends</span> <span class="pl-e">NimbleActivity&lt;<span class="pl-smi">MainView</span>&gt;</span> <span class="pl-k">implements</span> <span class="pl-e">MainView</span> {
+    <span class="pl-k">private</span> <span class="pl-smi">MainPresenter</span> presenter;
 
     <span class="pl-k">@Override</span>
     <span class="pl-k">protected</span> <span class="pl-smi">MainPresenter</span> <span class="pl-en">presenter</span>() {
+        <span class="pl-k">if</span>(presenter <span class="pl-k">==</span> <span class="pl-c1">null</span>){
+            presenter <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-smi">MainPresenter</span>();
+        }
         <span class="pl-k">return</span> presenter;
     }
 
@@ -136,12 +140,7 @@
 </ul>
 
 <h3>
-<a id="version" class="anchor" href="#version" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Version</h3>
-
-<p>0.5.0</p>
-
-<h2>
-<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h3>
 
 <div class="highlight highlight-source-groovy-gradle"><pre>compile <span class="pl-s"><span class="pl-pds">'</span>com.lenguyenthanh.nimble:nimble:0.5.0<span class="pl-pds">'</span></span></pre></div>
 
