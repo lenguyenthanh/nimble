@@ -75,10 +75,7 @@ Nimble has a lot of inspiration from other great MVP libraries for Android:
 * Nucleus - https://github.com/konmik/nucleus
 * Mosby - https://github.com/sockeqwe/mosby
 
-### Version
-0.5.0
-
-## Installation
+### Installation
 ```gradle
 compile 'com.lenguyenthanh.nimble:nimble:0.5.0'
 ```
