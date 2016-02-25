@@ -44,7 +44,7 @@ android {
 }
 
 dependencies {
-  compile 'com.android.support:support-annotations:23.1.1'
+  compile 'com.android.support:support-annotations:23.2.0'
 
   testCompile 'junit:junit:4.12'
   testCompile 'com.google.truth:truth:0.28'
