@@ -13,8 +13,8 @@ android {
   defaultConfig {
     minSdkVersion 15
     targetSdkVersion 23
-    versionCode versionMajor * 10000 + versionMinor * 1000 + versionPatch * 100 + versionBuild
-    versionName "${versionMajor}.${versionMinor}.${versionPatch}"
+    versionName VERSION_NAME
+    versionCode Integer.parseInt(VERSION_CODE)
   }
 
   buildTypes {
@@ -50,3 +50,5 @@ dependencies {
   testCompile 'com.google.truth:truth:0.28'
   testCompile 'org.mockito:mockito-all:1.10.19'
 }
+
+apply from: '../gradle/gradle-mvn-push.gradle'
