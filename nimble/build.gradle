@@ -6,30 +6,6 @@ def versionMinor = 5
 def versionPatch = 0
 def versionBuild = 0 // bump for dogfood builds, public betas, etc.
 
-ext {
-  bintrayRepo = 'maven'
-  bintrayName = 'android-nimble'
-
-  publishedGroupId = 'com.lenguyenthanh.nimble'
-  libraryName = 'nimble'
-  artifact = 'nimble'
-
-  libraryDescription = 'A small, quick and flexible Model-View-Presenter library for Android.'
-
-  siteUrl = 'https://github.com/lenguyenthanh/nimble'
-  gitUrl = 'https://github.com/lenguyenthanh/nimble.git'
-
-  libraryVersion = "${versionMajor}.${versionMinor}.${versionPatch}"
-
-  developerId = 'lenguyenthanh'
-  developerName = 'Thanh Le'
-  developerEmail = 'lenguyenthanh@hotmail.com'
-
-  licenseName = 'The Apache Software License, Version 2.0'
-  licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-  allLicenses = ["Apache-2.0"]
-}
-
 android {
   compileSdkVersion 23
   buildToolsVersion "23.0.2"
@@ -37,8 +13,8 @@ android {
   defaultConfig {
     minSdkVersion 15
     targetSdkVersion 23
-    versionCode versionMajor * 10000 + versionMinor * 1000 + versionPatch * 100 + versionBuild
-    versionName "${versionMajor}.${versionMinor}.${versionPatch}"
+    versionName VERSION_NAME
+    versionCode Integer.parseInt(VERSION_CODE)
   }
 
   buildTypes {
