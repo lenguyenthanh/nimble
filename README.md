@@ -53,9 +53,12 @@ You should follow these steps to create a MVP component in your application:
 
   ```java
   public class MainActivity extends NimbleActivity<MainView> implements MainView {
-
+      private MainPresenter presenter;
       @Override
       protected MainPresenter presenter() {
+          if(presenter == null){
+              presenter = new MainPresenter();
+          }
           return presenter;
       }
     
