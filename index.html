@@ -38,9 +38,9 @@
 <p>Nimble is a small, quick and flexible Model-View-Presenter library for Android</p>
 
 <h3>
-<a id="android-model-view-presentermvp" class="anchor" href="#android-model-view-presentermvp" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Android Model-View-Presenter(Mvp)</h3>
+<a id="android-model-view-presentermvp" class="anchor" href="#android-model-view-presentermvp" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Android Model-View-Presenter(MVP)</h3>
 
-<p>Mvp is a architectural pattern, and is to used mostly for front end. It has three main parts:</p>
+<p>MVP is a architectural pattern, and is to used mostly for front end. It has three main parts:</p>
 
 <ul>
 <li>The <strong>model</strong> should be a simple Java object, is used to store data to present to user.</li>
@@ -66,7 +66,7 @@
 <li>It has totally 500 lines of code. So it is simple and easy to work with. You don't really need to take alot of time to understand it.</li>
 <li>It has well tested code so you can confident when using it.</li>
 <li>It is designed to be used with Dagger but you can use it any way you like. It is so flexible.</li>
-<li>It can be used as multiple Mvp components in one screen as well as, one Mvp for multiple screens.</li>
+<li>It can be used as multiple MVP components in one screen as well as, one MVP for multiple screens.</li>
 <li>It provides mechanism to save data when activity/fragment/view is recreated throws Bundle class.</li>
 </ul>
 
@@ -75,7 +75,7 @@
 
 <p>Nimble has two basic interface <a href="https://github.com/lenguyenthanh/nimble/blob/master/nimble-core/src/main/java/com/lenguyenthanh/nimble/NimbleView.java">NimbleView</a> and <a href="https://github.com/lenguyenthanh/nimble/blob/master/nimble-core/src/main/java/com/lenguyenthanh/nimble/NimblePresenter.java">NimblePresenter</a>. They are base interfaces for ant views and presenters.</p>
 
-<p>You should follow these steps to create a Mvp component in your application:</p>
+<p>You should follow these steps to create a MVP component in your application:</p>
 
 <ol>
 <li>
@@ -103,25 +103,23 @@
 }</pre></div>
 </li>
 <li>
-<p>Implement your View which should extent base Nimble Views such as <a href="https://github.com/lenguyenthanh/nimble/blob/master/nimble-core/src/main/java/com/lenguyenthanh/nimble/view/NimbleActivity.java">NimbleActivity</a>:</p>
+<p>Implement your View which should extent base a Nimble Views such as <a href="https://github.com/lenguyenthanh/nimble/blob/master/nimble-core/src/main/java/com/lenguyenthanh/nimble/view/NimbleActivity.java">NimbleActivity</a> and implments your View interface:</p>
 
-<div class="highlight highlight-source-java"><pre><span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">MainActivity</span> <span class="pl-k">extends</span> <span class="pl-e">NimbleActivity&lt;<span class="pl-smi">MainView</span>&gt;</span> {
+<div class="highlight highlight-source-java"><pre><span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">MainActivity</span> <span class="pl-k">extends</span> <span class="pl-e">NimbleActivity&lt;<span class="pl-smi">MainView</span>&gt;</span> <span class="pl-k">implements</span> <span class="pl-e">MainView</span> {
 
     <span class="pl-k">@Override</span>
     <span class="pl-k">protected</span> <span class="pl-smi">MainPresenter</span> <span class="pl-en">presenter</span>() {
         <span class="pl-k">return</span> presenter;
     }
 
-    <span class="pl-k">@Override</span>
-    <span class="pl-k">protected</span> <span class="pl-k">void</span> <span class="pl-en">onCreate</span>(<span class="pl-smi">Bundle</span> <span class="pl-v">savedInstanceState</span>) {
-        <span class="pl-v">super</span><span class="pl-k">.</span>onCreate(savedInstanceState);
+    <span class="pl-k">void</span> <span class="pl-en">onButtonClicked</span>(){
         presenter()<span class="pl-k">.</span>getUser();
     }
 }</pre></div>
 </li>
 </ol>
 
-<p>Congratulation!!! You have a Mvp component now.</p>
+<p>Congratulation!!! You have a MVP component now.</p>
 
 <h3>
 <a id="inspiration" class="anchor" href="#inspiration" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Inspiration</h3>
@@ -145,7 +143,7 @@
 <h2>
 <a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
 
-<p>Just clone and copy/paste. I am trying to publish it to Jcenter() and maven() center. So sorry for any inconvenient. Will be updated soon.</p>
+<div class="highlight highlight-source-groovy-gradle"><pre>compile <span class="pl-s"><span class="pl-pds">'</span>com.lenguyenthanh.nimble:nimble:0.5.0<span class="pl-pds">'</span></span></pre></div>
 
 <h3>
 <a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h3>
