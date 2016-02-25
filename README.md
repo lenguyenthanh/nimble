@@ -49,19 +49,17 @@ You should follow these steps to create a MVP component in your application:
       }
   }
   ```
-4. Implement your View which should extent base Nimble Views such as [NimbleActivity](https://github.com/lenguyenthanh/nimble/blob/master/nimble-core/src/main/java/com/lenguyenthanh/nimble/view/NimbleActivity.java):
+4. Implement your View which should extent base a Nimble Views such as [NimbleActivity](https://github.com/lenguyenthanh/nimble/blob/master/nimble-core/src/main/java/com/lenguyenthanh/nimble/view/NimbleActivity.java) and implments your View interface:
 
   ```java
-  public class MainActivity extends NimbleActivity<MainView> {
+  public class MainActivity extends NimbleActivity<MainView> implements MainView {
 
       @Override
       protected MainPresenter presenter() {
           return presenter;
       }
     
-      @Override
-      protected void onCreate(Bundle savedInstanceState) {
-          super.onCreate(savedInstanceState);
+      void onButtonClicked(){
           presenter().getUser();
       }
   }
