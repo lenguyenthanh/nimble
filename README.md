@@ -53,9 +53,13 @@ You should follow these steps to create a MVP component in your application:
 
   ```java
   public class MainActivity extends NimbleActivity<MainView> implements MainView {
-
+      private MainPresenter presenter;
+      
       @Override
       protected MainPresenter presenter() {
+          if(presenter == null){
+              presenter = new MainPresenter();
+          }
           return presenter;
       }
     
@@ -75,10 +79,7 @@ Nimble has a lot of inspiration from other great MVP libraries for Android:
 * Nucleus - https://github.com/konmik/nucleus
 * Mosby - https://github.com/sockeqwe/mosby
 
-### Version
-0.5.0
-
-## Installation
+### Installation
 ```gradle
 compile 'com.lenguyenthanh.nimble:nimble:0.5.0'
 ```
