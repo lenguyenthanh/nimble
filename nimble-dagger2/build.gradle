@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.neenbedankt.android-apt'
+apply from: '../code_quality_tools/jacoco.gradle'
 
 android {
   compileSdkVersion 23
