@@ -1,11 +1,6 @@
 apply plugin: 'com.android.library'
 apply from: '../code_quality_tools/jacoco.gradle'
 
-def versionMajor = 0
-def versionMinor = 5
-def versionPatch = 0
-def versionBuild = 0 // bump for dogfood builds, public betas, etc.
-
 android {
   compileSdkVersion 23
   buildToolsVersion "23.0.2"
