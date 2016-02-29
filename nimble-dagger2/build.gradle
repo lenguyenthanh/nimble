@@ -26,7 +26,7 @@ repositories {
 }
 
 dependencies {
-  compile 'com.lenguyenthanh.nimble:nimble:0.5.0'
+  compile 'com.lenguyenthanh.nimble:nimble:0.5.1'
 
   compile 'com.android.support:appcompat-v7:23.2.0'
   compile 'com.android.support:design:23.2.0'
