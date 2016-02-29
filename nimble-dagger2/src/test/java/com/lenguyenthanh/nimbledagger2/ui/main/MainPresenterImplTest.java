@@ -44,6 +44,14 @@ public class MainPresenterImplTest {
   }
 
   @Test
+  public void testRestoreEmptyData() throws Exception {
+    String fullName = "";
+    presenter.fullName = fullName;
+    presenter.onCreate(null);
+    verifyZeroInteractions(view);
+  }
+
+  @Test
   public void testGetUser() throws Exception {
     User user = new User("Nimble", "Library");
     when(userRepository.getUser()).thenReturn(user);

@@ -12,6 +12,7 @@ public abstract class SaveStatePresenter<View extends NimbleView> extends BasePr
     Icepick.restoreInstanceState(this, savedInstanceState);
   }
 
+  @Override
   public void onSave(final Bundle outState) {
     Icepick.saveInstanceState(this, outState);
   }
