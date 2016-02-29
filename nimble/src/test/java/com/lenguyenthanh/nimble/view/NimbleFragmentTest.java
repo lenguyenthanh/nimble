@@ -29,9 +29,9 @@ public class NimbleFragmentTest {
   //public void testOnCreateView() throws Exception {
   //  LayoutInflater layoutInflater = spy(LayoutInflater.class);
   //  ViewGroup viewGroup = spy(ViewGroup.class);
-  //  frameLayout.onCreateView(layoutInflater, viewGroup, bundle);
-  //  verify(layoutInflater).inflate(frameLayout.layoutId(), viewGroup, false);
-  //  verify(presenter).takeView(frameLayout);
+  //  layout.onCreateView(layoutInflater, viewGroup, bundle);
+  //  verify(layoutInflater).inflate(layout.layoutId(), viewGroup, false);
+  //  verify(presenter).takeView(layout);
   //  verify(presenter).onCreate(bundle);
   //}
 
