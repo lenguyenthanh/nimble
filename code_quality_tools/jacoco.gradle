@@ -83,7 +83,9 @@ FileCollection excludeFilesFromTree(String path) {
                                         '**/*Module.*', // Modules for Dagger.
                                         '**/*Dagger*.*', // Dagger auto-generated code.
                                         '**/*MembersInjector*.*', // Dagger auto-generated code.
-                                        '**/*_Provide*Factory*.*'] // Dagger auto-generated code.
+                                        '**/*_Provide*Factory*.*', // Dagger auto-generated code.
+                                        '**/*_Factory*.*', // Dagger auto-generated code.
+                                        '**/*$Icepick*.*',] // Icepick auto-generated code.
   )
 }
 

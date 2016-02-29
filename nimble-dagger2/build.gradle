@@ -1,0 +1,47 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.neenbedankt.android-apt'
+
+android {
+  compileSdkVersion 23
+  buildToolsVersion "23.0.2"
+
+  defaultConfig {
+    applicationId "com.lenguyenthanh.nimbledagger2"
+    minSdkVersion 15
+    targetSdkVersion 23
+    versionCode 1
+    versionName "1.0"
+  }
+  buildTypes {
+    release {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+    }
+  }
+}
+
+repositories {
+  maven {url "https://clojars.org/repo/"}
+}
+
+dependencies {
+  compile 'com.lenguyenthanh.nimble:nimble:0.5.1'
+
+  compile 'com.android.support:appcompat-v7:23.2.0'
+  compile 'com.android.support:design:23.2.0'
+
+  //Dagger 2
+  compile 'com.google.dagger:dagger:2.0.2'
+  apt 'com.google.dagger:dagger-compiler:2.0.2'
+  provided 'org.glassfish:javax.annotation:10.0-b28'
+
+  // saving view state
+  compile 'frankiesardo:icepick:3.1.0'
+  apt 'frankiesardo:icepick-processor:3.1.0'
+
+  // View Injection
+  compile 'com.jakewharton:butterknife:7.0.1'
+
+  testCompile 'junit:junit:4.12'
+  testCompile 'org.mockito:mockito-all:1.10.19'
+}
