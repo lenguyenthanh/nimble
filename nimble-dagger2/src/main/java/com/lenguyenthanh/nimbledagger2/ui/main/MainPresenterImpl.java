@@ -15,7 +15,7 @@ public class MainPresenterImpl extends SaveStatePresenter<MainView> implements M
   String fullName;
 
   @Inject
-  public MainPresenterImpl(UserRepository userRepository) {
+  public MainPresenterImpl(@NonNull UserRepository userRepository) {
     this.userRepository = userRepository;
   }
 
