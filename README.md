@@ -1,23 +1,14 @@
-# Nimble [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.lenguyenthanh.nimble/nimble/badge.svg?style=plastic)](https://maven-badges.herokuapp.com/maven-central/cz.jirutka.rsql/rsql-parser) [![Build Status](https://travis-ci.org/lenguyenthanh/nimble.svg?branch=master)](https://travis-ci.org/lenguyenthanh/nimble) [![codecov.io](https://codecov.io/github/lenguyenthanh/nimble/coverage.svg?branch=master)](https://codecov.io/github/lenguyenthanh/nimble?branch=master)
+# Nimble [![Build Status](https://travis-ci.org/lenguyenthanh/nimble.svg?branch=master)](https://travis-ci.org/lenguyenthanh/nimble) [![codecov.io](https://codecov.io/github/lenguyenthanh/nimble/coverage.svg?branch=master)](https://codecov.io/github/lenguyenthanh/nimble?branch=master)
 
 Nimble is a small, quick and flexible Model-View-Presenter library for Android
 
-### Android Model-View-Presenter(MVP)
-MVP is a architectural pattern, and is to used mostly for front end. It has three main parts:
-* The **model** should be a simple Java object, is used to store data to present to user.
-* The **View** is used to display data to user. It should be a [passive view](http://martinfowler.com/eaaDev/PassiveScreen.html).
-* The **presenter** acts upon the model and the view. It retrieves data from repositories (the model), and formats it for display in the view.
-
-There are some other definitions which specifics for Android (Thanks [Christian](https://twitter.com/panavtec) for his great [article](http://panavtec.me/modeling-presentation-layer/)):
-* **Android view**: Just an Android component, something that extends from android.view.View
-* **View**: The view interface to communicate from your presenter to your view implementation, it can be implemented in your preferred Android component, sometimes is better to use an Activity others a Fragment or maybe a Custom View.
-* **Screen**: A screen is more a user concept, the user gets the feeling that the phone is navigating between windows, but we can represent this in Android with Activities or replacing fragments/views in the same Activity. So it depends on the perception that the user gets and usually represents all the content that you can see in the view.
-
+If you do not know much about MVP, please read it here: https://github.com/lenguyenthanh/nimble/wiki/MVP
 ### Why Nimble
-* It has totally 500 lines of code. So it is simple and easy to work with. You don't really need to take alot of time to understand it.
+* It has totally 500 lines of code. So it is simple and easy to work with. You don't really need to take a lot of time to understand it.
 * It has well tested code so you can confident when using it.
 * It is designed to be used with Dagger but you can use it any way you like. It is so flexible.
 * It can be used as multiple MVP components in one screen as well as, one MVP for multiple screens.
+* It manage the life cycle of the view and presenter throw base classes so you will save a lot of tim.
 * It provides mechanism to save data when activity/fragment/view is recreated throws Bundle class.
 
 ### Usage
