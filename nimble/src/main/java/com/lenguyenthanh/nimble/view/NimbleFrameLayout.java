@@ -28,8 +28,7 @@ public abstract class NimbleFrameLayout<V extends NimbleView> extends FrameLayou
   }
 
   public Activity getActivity() {
-    Context context = getContext();
-    return ViewHelper.getInstance().getActivity(context);
+    return ViewHelper.getInstance().getActivity(getContext());
   }
 
   @Override

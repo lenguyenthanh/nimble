@@ -28,8 +28,7 @@ public abstract class NimbleRelativeLayout<V extends NimbleView> extends LinearL
   }
 
   public Activity getActivity() {
-    Context context = getContext();
-    return ViewHelper.getInstance().getActivity(context);
+    return ViewHelper.getInstance().getActivity(getContext());
   }
 
   @Override

@@ -28,8 +28,7 @@ public abstract class NimbleLinearLayout<V extends NimbleView> extends LinearLay
   }
 
   public Activity getActivity() {
-    Context context = getContext();
-    return ViewHelper.getInstance().getActivity(context);
+    return ViewHelper.getInstance().getActivity(getContext());
   }
 
   @Override
