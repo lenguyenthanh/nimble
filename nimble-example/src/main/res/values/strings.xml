@@ -1,0 +1,4 @@
+<resources>
+  <string name="app_name">Nimble Example</string>
+  <string name="press_fab">Press fab!!!</string>
+</resources>
