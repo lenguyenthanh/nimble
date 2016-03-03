@@ -6,15 +6,15 @@ If you do not know much about MVP, please read about it: [MVP Definition and bes
 Or read more about [Nimble](https://github.com/lenguyenthanh/nimble/wiki/Nimble).
 
 ### Why Nimble
-* It has totally 500 lines of code. So it is simple and easy to work with. You don't really need to take a lot of time to understand it.
-* It has well tested code so you can confident when using it.
-* It is designed to be used with Dagger but you can use it any way you like. It is so flexible.
-* It can be used as multiple MVP components in one screen as well as, one MVP for multiple screens.
-* It manage the life cycle of the view and presenter throw base classes so you will save a lot of tim.
-* It provides mechanism to save data when activity/fragment/view is recreated throws Bundle class.
+* Nimble provides simple base classes to implement [MVP](https://github.com/lenguyenthanh/nimble/wiki/MVP) simple.
+* Nimble is simple has less than 500 lines of code. So it is easy to read and understand. You cat get familiar with it in just 30 minutes.
+* Nimble has well tested code (more than 85% code [coverage](https://codecov.io/github/lenguyenthanh/nimble?branch=master)) so you can confident when using it.
+* Nimble is designed to be flexible. So you can use it any way you. It can be used perfectly with Dagger or you can manage it manually.
+* Nimble provides mechanism to manage the life cycle of the view for you.
+* Nimble provides mechanism to save data when activity/fragment/view is recreated throws Bundle class.
 
 ### Usage
-Nimble has two basic interface [NimbleView](https://github.com/lenguyenthanh/nimble/blob/master/nimble-core/src/main/java/com/lenguyenthanh/nimble/NimbleView.java) and [NimblePresenter](https://github.com/lenguyenthanh/nimble/blob/master/nimble-core/src/main/java/com/lenguyenthanh/nimble/NimblePresenter.java). They are base interfaces for ant views and presenters.
+Nimble has two basic interfaces [NimbleView](https://github.com/lenguyenthanh/nimble/blob/master/nimble-core/src/main/java/com/lenguyenthanh/nimble/NimbleView.java) and [NimblePresenter](https://github.com/lenguyenthanh/nimble/blob/master/nimble-core/src/main/java/com/lenguyenthanh/nimble/NimblePresenter.java). They are base interfaces for ant views and presenters.
 
 You should follow these steps to create a MVP component in your application:
 
@@ -25,7 +25,7 @@ You should follow these steps to create a MVP component in your application:
       void showUser(User user);
   }
   ```
-2. Create a Presenter interface which must extent NimblePresenter with View generic like:
+2. Create a Presenter interface which must extent [NimblePresenter](https://github.com/lenguyenthanh/nimble/blob/master/nimble%2Fsrc%2Fmain%2Fjava%2Fcom%2Flenguyenthanh%2Fnimble%2FNimblePresenter.java) with View generic like:
 
   ```java
   public interface MainPresenter extends NimblePresenter<MainView> {
