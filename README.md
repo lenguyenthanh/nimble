@@ -2,7 +2,9 @@
 
 Nimble is a small, quick and flexible Model-View-Presenter library for Android
 
-If you do not know much about MVP, please read it here: https://github.com/lenguyenthanh/nimble/wiki/MVP
+If you do not know much about MVP, please read about it: [MVP Definition and best practices](https://github.com/lenguyenthanh/nimble/wiki/MVP).
+Or read more about [Nimble](https://github.com/lenguyenthanh/nimble/wiki/Nimble).
+
 ### Why Nimble
 * It has totally 500 lines of code. So it is simple and easy to work with. You don't really need to take a lot of time to understand it.
 * It has well tested code so you can confident when using it.
