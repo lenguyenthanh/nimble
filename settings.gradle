@@ -1,1 +1,1 @@
-include ':nimble', ':nimble-dagger2'
+include ':nimble', ':nimble-dagger2', ':nimble-example'
