@@ -16,6 +16,8 @@
 package com.lenguyenthanh.nimble.view;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.ViewGroup;
 import com.lenguyenthanh.nimble.NimblePresenter;
 import com.lenguyenthanh.nimble.NimbleView;
 import org.junit.Before;
@@ -23,6 +25,7 @@ import org.junit.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
+import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.spy;
 import static org.mockito.Mockito.verify;
 
@@ -40,15 +43,15 @@ public class NimbleFragmentTest {
     ((TestFragment) fragment).setPresenter(presenter);
   }
 
-  //@Test
-  //public void testOnCreateView() throws Exception {
-  //  LayoutInflater layoutInflater = spy(LayoutInflater.class);
-  //  ViewGroup viewGroup = spy(ViewGroup.class);
-  //  layout.onCreateView(layoutInflater, viewGroup, bundle);
-  //  verify(layoutInflater).inflate(layout.layoutId(), viewGroup, false);
-  //  verify(presenter).takeView(layout);
-  //  verify(presenter).onCreate(bundle);
-  //}
+  @Test
+  public void testOnCreateView() throws Exception {
+    LayoutInflater layoutInflater = mock(LayoutInflater.class);
+    ViewGroup viewGroup = mock(ViewGroup.class);
+    fragment.onCreateView(layoutInflater, viewGroup, bundle);
+    verify(layoutInflater).inflate(fragment.layoutId(), viewGroup, false);
+    verify(presenter).takeView(fragment);
+    verify(presenter).onCreate(bundle);
+  }
 
   @Test
   public void testOnResume() throws Exception {

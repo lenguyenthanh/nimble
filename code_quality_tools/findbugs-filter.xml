@@ -18,7 +18,6 @@
     <!-- Do not check for non-initialized fields in tests because usually we initialize them in @Before -->
     <Match>
         <Class name="~.*Test"/>
-        <Bug pattern="UWF_FIELD_NOT_INITIALIZED_IN_CONSTRUCTOR" type="UWF_FIELD_NOT_INITIALIZED_IN_CONSTRUCTOR"/>
     </Match>
 
     <!-- Do not check for non-initialized fields in activities because usually we initialize View Widgets by ButterKnife -->
