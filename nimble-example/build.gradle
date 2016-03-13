@@ -21,8 +21,8 @@ android {
 
 dependencies {
   compile 'com.lenguyenthanh.nimble:nimble:0.5.1'
-  compile 'com.android.support:appcompat-v7:23.2.0'
-  compile 'com.android.support:design:23.2.0'
+  compile 'com.android.support:appcompat-v7:23.2.1'
+  compile 'com.android.support:design:23.2.1'
   // View Injection
   compile 'com.jakewharton:butterknife:7.0.1'
   testCompile 'junit:junit:4.12'
