@@ -30,58 +30,7 @@ subprojects {
     }
   }
 
-  plugins.apply('pmd')
-
-  pmd {
-    toolVersion = '5.4.0'
-  }
-
-  task pmd(type: Pmd) {
-    ignoreFailures = false // Fail early.
-    ruleSetFiles = project.files(rootProject.file("code_quality_tools/pmd.xml"))
-    ruleSets = []
-
-    source = fileTree('src/main/java')
-  }
-
-  plugins.apply('findbugs')
-
-  task findbugs(type: FindBugs) {
-    ignoreFailures = false // Fail early.
-
-    effort = 'max'
-    reportLevel = 'low' // Report even low priority problems.
-
-    classes = files("${project.projectDir}/build/intermediates/classes")
-    source = fileTree('src/main/java')
-
-    // If somebody has an idea how to make this work with support libraries -> open a PR please.
-    classpath = files()
-
-    reports {
-      xml.enabled = false
-      html.enabled = true
-      html {
-        destination "$project.buildDir/reports/findbugs/findbugs.html"
-      }
-    }
-
-    excludeFilter = rootProject.file('code_quality_tools/findbugs-filter.xml')
-  }
-
-  plugins.apply('checkstyle')
-
-  task checkstyle(type: Checkstyle) {
-    configFile rootProject.file('code_quality_tools/checkstyle.xml')
-
-    ignoreFailures false // Fail early.
-    showViolations true
-
-    source 'src'
-    include '**/*.java'
-
-    classpath = files()
-  }
+  apply from: '../code_quality_tools/quality.gradle'
 
   afterEvaluate {
     tasks.findByName('pmd').dependsOn('assemble')
