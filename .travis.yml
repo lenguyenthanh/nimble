@@ -1,6 +1,6 @@
 language: android
 sudo: false
-jdk: oraclejdk7
+jdk: oraclejdk8
 env:
   matrix:
     - ANDROID_TARGET=android-23 ANDROID_ABI=armeabi-v7a
@@ -22,17 +22,11 @@ cache:
     - $HOME/.m2
     - $HOME/.gradle
 
-addons:
-  apt_packages:
-    - pandoc
-  artifacts:
-    paths:
-      - $(git ls-files -o | grep build/outputs | tr "\n" ":")
 before_install:
   - pip install --user codecov
 
 script:
-  - ./gradlew check -PdisablePreDex --continue --stacktrace
+  - sh ci.sh
 
 after_success:
   - ./gradlew jacocoFullReport
