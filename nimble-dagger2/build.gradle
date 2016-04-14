@@ -27,8 +27,8 @@ repositories {
 dependencies {
   compile 'com.lenguyenthanh.nimble:nimble:0.5.1'
 
-  compile 'com.android.support:appcompat-v7:23.2.1'
-  compile 'com.android.support:design:23.2.1'
+  compile 'com.android.support:appcompat-v7:23.3.0'
+  compile 'com.android.support:design:23.3.0'
 
   //Dagger 2
   compile 'com.google.dagger:dagger:2.0.2'
