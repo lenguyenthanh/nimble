@@ -20,11 +20,11 @@ import android.content.Context;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.util.AttributeSet;
-import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import com.lenguyenthanh.nimble.NimblePresenter;
 import com.lenguyenthanh.nimble.NimbleView;
 
-public abstract class NimbleRelativeLayout<V extends NimbleView> extends LinearLayout
+public abstract class NimbleRelativeLayout<V extends NimbleView> extends RelativeLayout
     implements NimbleView {
   protected static final String PARENT_STATE_KEY = "parent_state";
 
