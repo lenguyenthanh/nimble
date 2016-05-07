@@ -32,7 +32,7 @@ public abstract class NimbleActivity<V extends NimbleView> extends Activity impl
   protected void onCreate(final Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     initialize();
-    presenter().takeView(getMvpView());
+    presenter().takeView(getNimbleView());
     presenter().onCreate(savedInstanceState);
   }
 
@@ -45,13 +45,13 @@ public abstract class NimbleActivity<V extends NimbleView> extends Activity impl
   @CallSuper
   protected void onResume() {
     super.onResume();
-    presenter().takeView(getMvpView());
+    presenter().takeView(getNimbleView());
   }
 
   @Override
   @CallSuper
   protected void onPause() {
-    presenter().dropView(getMvpView());
+    presenter().dropView(getNimbleView());
     super.onPause();
   }
 
@@ -69,7 +69,7 @@ public abstract class NimbleActivity<V extends NimbleView> extends Activity impl
     super.onDestroy();
   }
 
-  private V getMvpView() {
+  private V getNimbleView() {
     return (V) this;
   }
 }
