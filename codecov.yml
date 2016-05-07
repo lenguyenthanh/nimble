@@ -1,0 +1,13 @@
+comment:
+layout: header, changes, diff, sunburst
+coverage:
+  ignore:
+  - .*/nimbledagger2/.*
+  - .*/nimbleexample/.*
+  status:
+    patch:
+      default:
+        target: '0'
+    project:
+      default:
+        target: auto
